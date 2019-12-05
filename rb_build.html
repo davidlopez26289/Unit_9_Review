@@ -7,8 +7,8 @@
       Review Assignment
 
       Red Ball Pizza Building Form
-      Author: 
-      Date:   
+      Author: David Lopez
+      Date:   12/3/19
 
       Filename:   rb_build.html
 
@@ -19,6 +19,8 @@
    <title>Red Ball Pizza Build a Pizza</title>
    <link href="rb_base.css" rel="stylesheet" />
    <link href="rb_styles2.css" rel="stylesheet" />
+   <link href="rb_forms2.css" rel="stylesheet" />
+   <script src="rb_formsubmit2.js"></script>
 </head>
 
 <body>
@@ -42,7 +44,58 @@
          by selecting from the ingredients below. You can divide your pizza
          into two regions to give your friends a wide choice of toppings
          and flavors.</p>
-         
+      
+      <form action="http://www.example.com/redball/build" method="POST" enctype="multipart/form-data">
+         <div class="formRow">
+            <label for="quantityBox">Quantity</label>
+            <input name="pizzaQuantity" id="quantityBox" type="number" value="1" step="1" min="1" max="10"/>
+         </div>
+
+         <div class="formRow">
+            <img src="rb_sizes.png" alt="sizes" />
+            <label for="sizeBox">Pizza Size</label>
+            <input name="pizzaName" id="sizeBox" type="range" value="14" step="2" min="10" max="16" />
+         </div>
+
+         <div class="formRow">
+            <label for="crustBox">Pizza Crust</label>
+            <input name="pizzaCrust" id="crustBox" type="" list="boxType" />
+            <datalist id="boxType">
+               <option value="Thin">Thin</option>
+               <option value="Thick">Thick</option>
+               <option value="Stuffed">Stuffed</option>
+               <option value="Pan">Pan</option>   
+            </datalist>
+         </div>
+
+         <div class="formRow">
+            <label for="cheeseBox">Double Cheese</label>
+            <input name="box" id="cheeseBox" type="checkbox">
+            <label for="sauceBox">Double Sauce</label>
+            <input name="box" id="sauceBox" type="checkbox">
+         </div>
+
+         <fieldset>
+            <legend>Meat Toppings</legend>
+            <div class="formRow">
+               <label>Location</label>
+               <img src="rb_full.png" alt="full">
+               <img src="rb_left.png" alt="left">
+               <img src="rb_right.png" alt="right">
+               <img src="rb_none.png" alt="none">
+            </div>
+
+            <div class="formRow">
+               <label>Pepperoni</label>
+
+            </div>
+         </fieldset>
+
+         <div class="formRow">
+            <input type="submit" value="Add To Your Order"
+         </div>
+        
+      </form>
    </section>
 
    <footer>
